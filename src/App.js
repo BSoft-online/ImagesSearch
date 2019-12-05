@@ -1,5 +1,11 @@
 import React from 'react';
+import { Search } from 'features/Search';
 
-const App = () => <div>My init app</div>;
+const App = () => (
+    <>
+        <Search />
+        <div>My init app</div>
+    </>
+);
 
 export default App;

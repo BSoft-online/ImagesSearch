@@ -30,7 +30,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-            src: path.resolve(__dirname, 'src'),
+            features: path.resolve(__dirname, 'src/features'),
         },
         extensions: ['.js', '.jsx'],
     },
