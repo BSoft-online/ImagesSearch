@@ -1,0 +1,19 @@
+{
+  "name": "imagessearch",
+  "version": "1.0.0",
+  "description": "This is an example of the app fetching images from multiple data sources.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BSoft-online/ImagesSearch.git"
+  },
+  "author": "B. S. BSoft",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BSoft-online/ImagesSearch/issues"
+  },
+  "homepage": "https://github.com/BSoft-online/ImagesSearch#readme"
+}
