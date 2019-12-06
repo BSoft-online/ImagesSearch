@@ -2,12 +2,12 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
-    search: {
-        width: '100%',
+    error: {
+        color: 'red',
     },
 });
 
-export const Search = () => {
+export const Error = ({ message }) => {
     const classes = useStyles();
-    return <input type="search" className={classes.search} />;
+    return <div className={classes.error}>{message}</div>;
 };

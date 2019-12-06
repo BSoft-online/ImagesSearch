@@ -2,6 +2,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
     context: __dirname,
@@ -31,6 +32,7 @@ module.exports = {
     resolve: {
         alias: {
             features: path.resolve(__dirname, 'src/features'),
+            config: path.resolve(__dirname, 'src/config'),
         },
         extensions: ['.js', '.jsx'],
     },
@@ -40,6 +42,9 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: path.resolve(__dirname, 'public/index.html'),
             filename: 'index.html',
+        }),
+        new webpack.DefinePlugin({
+            'process.env.API_URL': process.env.API_URL,
         }),
     ],
 };
