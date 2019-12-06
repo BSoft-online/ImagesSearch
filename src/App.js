@@ -4,6 +4,7 @@ import { PageContainer } from 'features/pageContainer';
 import { Results } from 'features/results';
 import { NoResults } from 'features/noResults';
 import { Error } from 'features/error';
+import { Loader } from 'features/loader';
 import 'regenerator-runtime/runtime';
 import 'cross-fetch/polyfill';
 
@@ -16,12 +17,13 @@ const App = () => {
         <PageContainer>
             <Search
                 setIsLoading={value => {
-                    setIsFirstRender(false);
+                    !value && setIsFirstRender(false);
                     setIsLoading(value);
                 }}
                 setResults={setImages}
                 setError={setError}
             />
+            {isLoading ? <Loader /> : null}
             {error ? (
                 <Error message={error} />
             ) : Array.isArray(images) && images.length ? (
