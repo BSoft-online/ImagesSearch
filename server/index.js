@@ -32,10 +32,12 @@ const getGiphyUrl = q =>
 const getGiphyResults = async term => {
     const response = await fetch(getGiphyUrl(term));
     const { data } = await response.json();
-    const results = (Array.isArray(data) ? data : []).map(({ url, title }) => ({
-        url,
-        title,
-    }));
+    const results = (Array.isArray(data) ? data : []).map(
+        ({ images, title }) => ({
+            url: images.original.url,
+            title,
+        })
+    );
     return results;
 };
 
